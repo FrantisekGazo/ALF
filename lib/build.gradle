@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+configurations {
+    compile.exclude group: 'stax'
+    compile.exclude group: 'xpp3'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    /* API 21 compatibility */
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:recyclerview-v7:21.0.0'
+    compile 'com.android.support:support-v13:21.0.0'
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.android.support:palette-v7:21.0.0'
+    compile 'com.android.support:cardview-v7:21.0.0'
+    /* EventBus - GreenRobot */
+    compile 'de.greenrobot:eventbus:2.4.0'
+    /* DI - ButterKnife & Dagger */
+    compile 'com.jakewharton:butterknife:6.1.0'
+    provided 'com.squareup.dagger:dagger-compiler:1.2.1'
+    compile 'com.squareup.dagger:dagger:1.2.1'
+    /* REST (XML & JSON Parsers) - Retrofit, OkHttp, Picasso *
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
+    compile 'com.squareup.okhttp:okhttp:2.0.0'
+    compile 'com.mobprofs:retrofit-simplexmlconverter:1.1'
+    compile 'org.simpleframework:simple-xml:2.7.1'
+    compile 'com.squareup.picasso:picasso:2.4.0'*/
+    compile 'com.google.code.gson:gson:2.3'
+    /* Android Priority Job Queue (Job Manager) */
+    compile 'com.path:android-priority-jobqueue:1.1.2'
+    /* Animation *
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.daimajia.easing:library:1.0.1@aar'
+    compile 'com.daimajia.androidanimations:library:1.1.3@aar' */
+}
