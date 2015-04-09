@@ -17,12 +17,12 @@ android {
         }
     }
 }
-
+/*
 configurations {
     compile.exclude group: 'stax'
     compile.exclude group: 'xpp3'
 }
-
+*/
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     /* API 21 compatibility */
