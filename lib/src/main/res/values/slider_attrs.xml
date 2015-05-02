@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <declare-styleable name="GeneralAttrs">
+        <attr name="handle" format="reference" />
+        <attr name="content" format="reference" />
+    </declare-styleable>
+
     <declare-styleable name="Slider">
         <attr name="orientation">
             <enum name="top" value="0" />
@@ -7,8 +13,8 @@
             <enum name="bottom" value="2" />
             <enum name="right" value="3" />
         </attr>
-        <attr name="handle" format="reference" />
-        <attr name="content" format="reference" />
+        <attr name="handle" />
+        <attr name="content" />
         <attr name="bottomOffset" format="dimension" />
         <attr name="topOffset" format="dimension" />
         <attr name="allowSingleTap" format="boolean" />
